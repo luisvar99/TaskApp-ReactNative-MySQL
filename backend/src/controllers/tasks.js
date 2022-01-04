@@ -1,9 +1,9 @@
 import {connection} from '../database'
 
 export const getTasks = async (req,res) => {
-    const connect = await connection()
-    const [rows] = await connect.query('SELECT * FROM tasks')
-    res.json(rows) 
+    const connect = await connection();
+    const [rows] = await connect.execute("SELECT * FROM tasks");
+    res.json(rows);
 }
 
 export const getTask = async (req,res) => {
@@ -11,7 +11,7 @@ export const getTask = async (req,res) => {
     const [rows] = await connect.query('SELECT * FROM tasks WHERE id = ?',
     [req.params.id]
     );
-    res.json(rows[0])
+    res.json(rows[0]);
 }
 
 export const getTaskCount = async (req,res) => {

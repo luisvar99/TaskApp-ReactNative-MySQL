@@ -1,10 +1,10 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 var _app = _interopRequireDefault(require("./app"));
 
 var _dotenv = require("dotenv");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 (0, _dotenv.config)();
 
